@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+#!/bin/bash
 
 echo "==> Disabling apt.daily.service & apt-daily-upgrade.service"
 systemctl stop apt-daily.timer apt-daily-upgrade.timer
@@ -44,6 +44,9 @@ update-grub
 
 # SSH tweaks
 echo "UseDNS no" >> /etc/ssh/sshd_config
+
+# User tweaks
+echo "${SSH_USERNAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/$SSH_USERNAME
 
 # reboot
 echo "====> Shutting down the SSHD service and rebooting..."

@@ -1,4 +1,4 @@
-echo "${SSH_USERNAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/$SSH_USERNAME
+#!/bin/bash
 mkdir -p /home/ubuntu/.ssh
 mv /home/ubuntu/authorized_keys /home/ubuntu/.ssh
 chown -R ubuntu:ubuntu /home/ubuntu/.ssh
