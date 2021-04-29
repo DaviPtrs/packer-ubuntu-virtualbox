@@ -1,22 +1,29 @@
-# packer-ubuntu-18.04
-==============
-### Overview
+# Packer Ubuntu Virtualbox
 
-A packer template to create Ubuntu 18.04 "Bionic Beaver" Server boxes for vagrant.
+- [Packer Ubuntu Virtualbox](#packer-ubuntu-virtualbox)
+  - [Overview](#overview)
+  - [Usage](#usage)
+    - [Ubuntu 18.04.5](#ubuntu-18045)
 
-### USAGE
-To create VirtualBox virtual machine.
-```sh
-    packer build ubuntu.json
+
+## Overview
+
+A packer template to create Ubuntu Server images (.ova) for VirtualBox.
+
+**DISCLAIMER:** Packer will copy your **ED25519** public key to provide public-key-based ssh access, if you don't have one, see [this link](https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54).
+
+
+## Usage
+
+```bash
+packer build ubuntu.pkr.hcl
 ```
-To create Hyper-V virtual machine.
-```sh
-    packer build ubuntu-hyperv.json
-```
+
+The ova file will be placed on `output/` directory
+
 
 ### Ubuntu 18.04.5
-Tested with [packer][] 1.6.1, [Vagrant][] 2.2.9, [VirtualBox][] 6.1.12
+Tested with [packer][] 1.7.2, [VirtualBox][] 6.1.16
 
 [Packer]: https://packer.io/
-[Vagrant]: https://www.vagrantup.com/
 [VirtualBox]: https://www.virtualbox.org/
