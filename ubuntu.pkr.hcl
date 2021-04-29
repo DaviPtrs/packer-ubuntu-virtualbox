@@ -4,11 +4,6 @@ variable "cpus" {
   default = "1"
 }
 
-variable "disable_ipv6" {
-  type    = string
-  default = "true"
-}
-
 variable "disk_size" {
   type    = string
   default = "40960"
@@ -175,7 +170,6 @@ build {
     environment_vars  = [
       "DEBIAN_FRONTEND=noninteractive", 
       "UPDATE=${var.update}", 
-      "DISABLE_IPV6=${var.disable_ipv6}", 
       "SSH_USERNAME=${var.ssh_username}", 
       "SSH_PASSWORD=${var.ssh_password}", 
       "http_proxy=${var.http_proxy}", 
